@@ -13,18 +13,23 @@
 
             <div class="row">
 
+                {{-- SỐ PHÒNG --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Số phòng</label>
                     <input type="text" name="room_number" 
-                           value="{{ $room->room_number }}" class="form-control" required>
+                           value="{{ $room->room_number }}" 
+                           class="form-control" required>
                 </div>
 
+                {{-- TẦNG (BẮT BUỘC) --}}
                 <div class="col-md-6 mb-3">
-                    <label class="form-label">Tòa nhà</label>
-                    <input type="text" name="building" 
-                           value="{{ $room->building }}" class="form-control">
+                    <label class="form-label">Tầng <span class="text-danger">*</span></label>
+                    <input type="number" name="floor" 
+                           value="{{ $room->floor }}"
+                           class="form-control" min="1" required>
                 </div>
 
+                {{-- GIỚI TÍNH --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Giới tính</label>
                     <select name="gender" class="form-control" required>
@@ -33,27 +38,36 @@
                     </select>
                 </div>
 
+                {{-- SỨC CHỨA --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Sức chứa</label>
-                    <input type="number" name="capacity" class="form-control"
-                           value="{{ $room->capacity }}" min="1" required>
+                    <input type="number" name="capacity" 
+                           value="{{ $room->capacity }}" 
+                           class="form-control" min="1" required>
                 </div>
 
+                {{-- DIỆN TÍCH --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Diện tích (m²)</label>
-                    <input type="number" name="area" class="form-control" 
-                           step="0.1" value="{{ $room->area }}">
+                    <input type="number" name="area" 
+                           value="{{ $room->area }}" 
+                           class="form-control" step="0.1">
                 </div>
 
+                {{-- LOẠI PHÒNG --}}
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Loại phòng</label>
-                    <input type="text" name="room_type" class="form-control"
-                           value="{{ $room->room_type }}" placeholder="VD: VIP, Thường...">
+                    <input type="text" name="room_type" 
+                           value="{{ $room->room_type }}" 
+                           class="form-control" placeholder="VD: VIP, Thường...">
                 </div>
 
+                {{-- MÔ TẢ --}}
                 <div class="col-12 mb-3">
                     <label class="form-label">Mô tả</label>
-                    <textarea name="description" class="form-control" rows="3">{{ $room->description }}</textarea>
+                    <textarea name="description" 
+                              class="form-control" 
+                              rows="3">{{ $room->description }}</textarea>
                 </div>
 
             </div>

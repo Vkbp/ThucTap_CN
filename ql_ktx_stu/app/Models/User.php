@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -15,17 +17,32 @@ class User extends Authenticatable
         'role',
     ];
 
-    public function profile()
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'password' => 'hashed',
+        ];
+    }
+
+    /** @return HasOne<PersonalProfile> */
+    public function profile(): HasOne
     {
         return $this->hasOne(PersonalProfile::class, 'user_id');
     }
 
-    public function dormitoryRecords()
+    /** @return HasMany<DormitoryRecord> */
+    public function dormitoryRecords(): HasMany
     {
         return $this->hasMany(DormitoryRecord::class, 'user_id');
     }
 
-    public function logs()
+    /** @return HasMany<ActivityLog> */
+    public function logs(): HasMany
     {
         return $this->hasMany(ActivityLog::class, 'user_id');
     }

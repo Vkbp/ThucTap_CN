@@ -18,10 +18,10 @@
                     <input type="text" name="room_number" class="form-control" required>
                 </div>
 
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">Tòa nhà (Không bắt buộc)</label>
-                    <input type="text" name="building" class="form-control" placeholder="A, B, C,...">
-                </div>
+               <div class="col-md-6 mb-3">
+                    <label class="form-label">Tầng <span class="text-danger">*</span></label>
+                    <input type="number" name="floor" class="form-control" required min="1" placeholder="Ví dụ: 1, 2, 3...">
+               </div>
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Giới tính</label>

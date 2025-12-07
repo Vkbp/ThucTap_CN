@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class HocKy extends Model
 {
+    public $timestamps = false;
+    
+    protected $table = 'hoc_kys';
     protected $fillable = [
         'school_year',
         'semester',

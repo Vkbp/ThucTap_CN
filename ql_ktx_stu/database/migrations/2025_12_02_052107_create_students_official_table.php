@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('gender', 10)->nullable();
             $table->string('department', 100)->nullable();
             $table->string('class_name', 100)->nullable();
+            $table->string('email')->unique();
         });
     }
 

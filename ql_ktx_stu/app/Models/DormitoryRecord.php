@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class DormitoryRecord extends Model
 {
+    public $timestamps = false;
+    
     protected $fillable = [
         'user_id', 'hoc_ky_id', 'room_id', 'bed_id',
         'card_number', 'check_in_date', 'check_out_date',
