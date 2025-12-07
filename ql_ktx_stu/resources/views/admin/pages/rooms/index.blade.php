@@ -26,9 +26,8 @@
         <table class="table table-striped align-middle">
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>Số phòng</th>
-                    <th>Tòa</th>
+                    <th>Tầng</th>
                     <th>Giới tính</th>
                     <th>Giường</th>
                     <th>Loại</th>
@@ -40,11 +39,11 @@
             <tbody>
                 @foreach ($rooms as $room)
                 <tr>
-                    <td>{{ $room->id }}</td>
 
                     <td class="fw-bold">{{ $room->room_number }}</td>
 
-                    <td>{{ $room->building ?? '—' }}</td>
+                    {{-- Tầng --}}
+                    <td>{{ $room->floor }}</td>
 
                     <td>
                         <span class="badge bg-{{ $room->gender == 'male' ? 'primary' : 'danger' }}">

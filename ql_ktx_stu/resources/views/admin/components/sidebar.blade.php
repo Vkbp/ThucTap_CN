@@ -35,21 +35,22 @@
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#">
+               <a class="sidebar-link" href="{{ route('admin.register.index') }}">
                     <i class="align-middle" data-feather="user-check"></i> 
                     <span class="align-middle">Hồ sơ đăng ký</span>
                 </a>
+
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#">
+                <a class="sidebar-link" href="{{ route('admin.residents.index') }}">
                     <i class="align-middle" data-feather="users"></i> 
                     <span class="align-middle">Sinh viên lưu trú</span>
                 </a>
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#">
+                <a class="sidebar-link" href="{{ route('admin.activity.index') }}">
                     <i class="align-middle" data-feather="file-text"></i> 
                     <span class="align-middle">Lịch sử hoạt động</span>
                 </a>

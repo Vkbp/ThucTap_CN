@@ -41,7 +41,6 @@
         <table class="table table-hover table-bordered align-middle">
             <thead class="table-light">
                 <tr>
-                    <th width="60">#</th>
                     <th>Mã giường</th>
                     <th>Phòng</th>
                     <th>Giới tính</th>
@@ -53,7 +52,6 @@
             <tbody>
                 @forelse ($beds as $bed)
                 <tr>
-                    <td>{{ $bed->id }}</td>
 
                     <td><strong>{{ $bed->bed_code }}</strong></td>
 

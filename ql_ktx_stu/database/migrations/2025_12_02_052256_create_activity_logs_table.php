@@ -14,7 +14,8 @@ return new class extends Migration
             $table->string('action', 100);
             $table->text('description')->nullable();
             $table->string('ip_address', 45)->nullable();
-            $table->timestamp('created_at')->nullable();
+            $table->timestamp('created_at')->useCurrent()->useCurrentOnUpdate();
+
         });
     }
 
